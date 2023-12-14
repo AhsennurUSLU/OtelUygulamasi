@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_UILayout.cshtml";
+}
+@using EntityLayer.Concrete
+@model List<Hakkimizda>
+
+<!doctype html>
+<html lang="zxx">
+
+
+
+<body>
+   
+    <section class="w3l-about-breadcrumb text-left">
+        <div class="breadcrumb-bg breadcrumb-bg-about py-sm-5 py-4">
+            <div class="container py-2">
+                <h2 class="title">Hakkımızda</h2>
+                <ul class="breadcrumbs-custom-path mt-2">
+                    <li><a href="#url">Anasayfa</a></li>
+                    <li class="active"><span class="fa fa-arrow-right mx-2" aria-hidden="true"></span> Hakkımızda </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+  @foreach(var item in Model){
+    <section class="w3l-cta4 py-5">
+        <div class="container py-lg-5">
+            <div class="ab-section text-center">
+                <h6 class="sub-title">Hakkımızda</h6>
+                <h3 class="hny-title">MVC Tabanlı Web Mimarisi</h3>
+                <p class="py-3 mb-3">
+                   @item.HakkimizdaDetay
+                </p>
+               
+            </div>
+            <div class="row mt-5">
+                <div class="col-md-9 mx-auto">
+                        <img src="assets/images/banner3.jpg" class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    }
+ 
+
+   
+
+</body>
+
+</html>
+

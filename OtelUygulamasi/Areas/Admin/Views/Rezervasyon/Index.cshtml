@@ -1,0 +1,95 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using EntityLayer.Concrete;
+@model List<Rezervasyon>
+
+
+<!DOCTYPE html>
+
+<html lang="en"
+	  class="light-style layout-menu-fixed"
+	  dir="ltr"
+	  data-theme="theme-default"
+	  data-assets-path="/adminPanel/assets/"
+	  data-template="vertical-menu-template-free">
+
+
+<body>
+
+	<div class="layout-page">
+
+
+
+		<div class="container-sm flex-grow-0 container-p-y">
+			<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"> Rezervasyonlar /</span>Rezervasyon Listesi</h4>
+
+			<!-- Basic Bootstrap Table -->
+			<div class="card">
+				<h5 class="card-header">Rezervasyon Listesi</h5>
+				<div class="table-responsive text-nowrap">
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Müşteri ID</th>
+								<th>Giriş Tarihi</th>
+								<th>Çıkış Tarihi</th>
+								<th>Tutar</th>
+								<th>Seçilen Otel ID</th>
+								<th>Seçilen Oda ID</th>
+								<th>Rezervasyon Durum</th>
+							</tr>
+						</thead>
+						<tbody class="table-border-bottom-0">
+							@foreach (var item in Model)
+							{
+								<tr>
+
+									<td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>@item.Musteri</strong></td>
+									<td>@item.GidisTarihi</td>
+									<td>
+										<ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
+
+											@item.DonusTarihi
+
+										</ul>
+									</td>
+									<td><span class="badge bg-label-primary me-1">@item.Tutar</span></td>
+									<td><span class="badge bg-label-primary me-1">@item.SecilenOtel</span></td>
+									<td><span class="badge bg-label-primary me-1">@item.SecilenOda</span></td>
+
+									<td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>@item.RezervasyonDurum </strong></td>
+
+									<td><a href="/Admin/Musteriler/DeleteMusteri/" class="btn btn-outline-danger">Sil</a></td>
+									<td><a href="/Admin/Musteriler/DeleteMusteri/" class="btn btn-outline-primary">Düzenle</a></td>
+
+
+
+
+								</tr>
+
+							}
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+
+			<hr class="my-5" />
+
+			</div>
+			</div>
+
+
+
+
+</body>
+</html>
+
+
+
+
+
